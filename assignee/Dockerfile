@@ -12,4 +12,4 @@ COPY ./app /code/app
 EXPOSE 81
 
 CMD ["/bin/sh", "-c", \
-    "uvicorn app.main:app --host 4.3.2.1 --port 81"]
+    "uvicorn app.main:app --host 0.0.0.0 --port 81"]
