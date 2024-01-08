@@ -15,7 +15,7 @@ jobs:
 
       - name: Build docker assignee image
         run: |
-          docker build ./assignee -f ./assignee/Dockerfile --tag ms-query:latest
+          docker build ./assignee -f ./assignee/Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/ms-assignee:latest
 
 
       - name: Login to DockerHub
@@ -27,7 +27,7 @@ jobs:
 
       - name: Build and push assignee service image
         run: |
-            docker push ${{ secrets.DOCKER_USERNAME }}/ms-query:latest
+            docker push ${{ secrets.DOCKER_USERNAME }}/ms-assignee:latest
   
   build-and-push-to-yc:
     name: Build and push to YandexCloud Registry
