@@ -21,5 +21,8 @@ class AssigneeService:
     def create_assignee(self, name: str) -> Assignee:
         return self.assignee_repo.create_assignee(name)
 
-    def update_assignee(self, id:UUID) -> Assignee:
+    def update_assignee(self, id: UUID) -> Assignee:
         return self.assignee_repo.update_assignee(id)
+
+    def delete_assignee(self, id: UUID) -> None:
+        return self.assignee_repo.delete_assignee(id)

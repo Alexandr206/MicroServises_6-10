@@ -3,8 +3,7 @@ from uuid import UUID
 from app.models.assignee import Assignee
 
 assignees: list[Assignee] = [
-        Assignee(id=1, name='Павел', taskcount = 1),
-        Assignee(id=2, name='Макар', taskcount = 1)
+        Assignee(id=1, name='Александр', taskcount = 3)
 ]
 
 class AssigneeRepo:
@@ -35,3 +34,11 @@ class AssigneeRepo:
                 return item
 
         raise KeyError
+
+    def delete_assignee(self, id: int) -> None:
+        global assignees
+        initial_length = len(assignees)
+        assignees = [assignee for assignee in assignees if assignee.id != id]
+
+        if len(assignees) == initial_length:
+            raise KeyError

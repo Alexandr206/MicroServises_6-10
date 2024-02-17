@@ -54,3 +54,11 @@ class AssigneeRepo:
         except:
             traceback.print_exc()
             raise KeyError
+
+    def delete_assignee(self, id: UUID) -> None:
+        assignee = self.db.query(DBAssignee).filter(DBAssignee.id == id).first()
+        if assignee:
+            self.db.delete(assignee)
+            self.db.commit()
+        else:
+            raise KeyError

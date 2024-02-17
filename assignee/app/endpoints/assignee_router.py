@@ -41,3 +41,13 @@ def update_assignee(
         return assignee.dict()
     except KeyError:
         raise HTTPException(404, f'Assignee with id={id} not found')
+
+@assignee_router.delete('/{id}')
+def delete_assignee(
+    id: int,
+    assignee_service: AssigneeService = Depends(AssigneeService)
+) -> None:
+    try:
+        assignee_service.delete_assignee(id)
+    except KeyError:
+        raise HTTPException(404, f'Assignee with id={id} not found')
