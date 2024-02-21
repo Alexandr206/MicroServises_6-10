@@ -11,6 +11,7 @@ def assignee_repo() -> AssigneeRepo:
     return repo
 
 
+
 @pytest.fixture(scope='session')
 def test_assignees() -> list[Assignee]:
     return [
