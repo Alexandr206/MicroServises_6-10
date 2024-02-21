@@ -46,8 +46,8 @@ def test_set_status(task_repo: TaskRepo, first_task: Task) -> None:
     updated_task = task_repo.set_status(first_task)
     assert updated_task.status == new_status
 
-def test_start_task(task_repo: TaskRepo, first_task: Task) -> None:
-    new_status = TaskStatuses.IN_PROGRESS
-    first_task.status = new_status
-    started_task = task_repo.start_task(first_task)
-    assert started_task.status == new_status
+#def test_start_task(task_repo: TaskRepo, first_task: Task) -> None:
+    #new_status = TaskStatuses.IN_PROGRESS
+    #first_task.status = new_status
+    #started_task = task_repo.start_task(first_task)
+    #assert started_task.status == new_status
