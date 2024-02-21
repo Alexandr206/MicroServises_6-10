@@ -28,7 +28,7 @@ async def consume_assignee_updates(loop: AbstractEventLoop) -> AbstractRobustCon
     connection = await connect_robust(settings.amqp_url, loop=loop)
     channel = await connection.channel()
 
-    assignee_update_queue = await channel.declare_queue('potemkin_assignee_update_queue', durable=True)
+    assignee_update_queue = await channel.declare_queue('slusarchuk_assignee_update_queue', durable=True)
 
     await assignee_update_queue.consume(process_assignee_update)
     print('Started RabbitMQ consuming for Assignee updates...')

@@ -10,8 +10,8 @@ from app.services.assignee_service import AssigneeService
 def assignee_repo_with_data():
     repo = AssigneeRepo()
     repo.assignees = [
-        Assignee(id=1, name='Павел', taskcount=1),
-        Assignee(id=2, name='Макар', taskcount=2),
+        Assignee(id=1, name='Иван', taskcount=1),
+        Assignee(id=2, name='Александр', taskcount=2),
     ]
     return repo
 
@@ -24,13 +24,13 @@ def assignee_service_with_repo(assignee_repo_with_data):
 def test_get_assignees(assignee_service_with_repo):
     assignees = assignee_service_with_repo.get_assignees()
     assert len(assignees) == 2
-    assert assignees[0].name == 'Павел'
-    assert assignees[1].name == 'Макар'
+    assert assignees[0].name == 'Иван'
+    assert assignees[1].name == 'Александр'
 
 
 def test_get_assignee_by_id(assignee_service_with_repo):
     assignee = assignee_service_with_repo.get_assignee_by_id(1)
-    assert assignee.name == 'Павел'
+    assert assignee.name == 'Иван'
 
 
 def test_create_assignee(assignee_service_with_repo):

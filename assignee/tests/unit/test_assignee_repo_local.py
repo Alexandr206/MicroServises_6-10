@@ -21,7 +21,7 @@ def test_empty_list(assignee_repo):
 
 def test_create_assignee(assignee_repo):
     initial_assignees = assignee_repo.get_assignees()
-    new_assignee = assignee_repo.create_assignee(name='John')
+    new_assignee = assignee_repo.create_assignee(name='Петр')
     updated_assignees = assignee_repo.get_assignees()
 
     assert len(updated_assignees) == len(initial_assignees)
@@ -30,7 +30,7 @@ def test_create_assignee(assignee_repo):
 
 
 def test_get_assignee_by_id(assignee_repo):
-    new_assignee = assignee_repo.create_assignee(name='John Doe')
+    new_assignee = assignee_repo.create_assignee(name='Петр Петрович')
     retrieved_assignee = assignee_repo.get_assignee_by_id(new_assignee.id)
 
     assert retrieved_assignee == new_assignee
@@ -39,7 +39,7 @@ def test_get_assignee_by_id(assignee_repo):
 
 
 def test_update_assignee(assignee_repo):
-    new_assignee = assignee_repo.create_assignee(name='John Doe')
+    new_assignee = assignee_repo.create_assignee(name='Петр Петрович')
     updated_assignee = assignee_repo.update_assignee(id=new_assignee.id)
 
     assert updated_assignee.taskcount == new_assignee.taskcount
@@ -53,12 +53,12 @@ def test_service_get_assignees(assignee_service):
 
 
 def test_service_create_assignee(assignee_service):
-    new_assignee = assignee_service.create_assignee(name='Jane Doe')
-    assert new_assignee.name == 'Jane Doe'
+    new_assignee = assignee_service.create_assignee(name='Петр Петрович')
+    assert new_assignee.name == 'Петр Петрович'
 
 
 def test_service_update_assignee(assignee_service):
-    new_assignee = assignee_service.create_assignee(name='Jane Doe')
+    new_assignee = assignee_service.create_assignee(name='Петр Петрович')
     updated_assignee = assignee_service.update_assignee(id=new_assignee.id)
 
     assert updated_assignee.taskcount == new_assignee.taskcount
