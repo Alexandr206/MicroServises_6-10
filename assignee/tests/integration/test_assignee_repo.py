@@ -15,14 +15,14 @@ def assignee_repo() -> AssigneeRepo:
 def test_assignees() -> list[Assignee]:
     return [
         Assignee(id=1, name='Иван', taskcount=1),
-        Assignee(id=2, name='Александр', taskcount=1)
+        Assignee(id=2, name='Александр', taskcount=2)
     ]
 
 
 def test_get_assignees(test_assignees: list[Assignee], assignee_repo: AssigneeRepo) -> None:
     assert assignee_repo.get_assignees() == [
         Assignee(id=1, name='Иван', taskcount=1),
-        Assignee(id=2, name='Александр', taskcount=1)
+        Assignee(id=2, name='Александр', taskcount=2)
     ]
 
 
