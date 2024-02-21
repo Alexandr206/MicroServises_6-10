@@ -33,7 +33,6 @@ def test_get_assignee_by_id(assignee_service_with_repo):
     assignee = assignee_service_with_repo.get_assignee_by_id(1)
     assert assignee.name == 'Иван'
 
-
 def test_create_assignee(assignee_service_with_repo):
     new_assignee = assignee_service_with_repo.create_assignee(name='Исполнитель')
     assert new_assignee.name == 'Исполнитель'
