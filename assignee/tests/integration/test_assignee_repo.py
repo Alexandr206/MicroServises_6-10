@@ -14,20 +14,20 @@ def assignee_repo() -> AssigneeRepo:
 @pytest.fixture(scope='session')
 def test_assignees() -> list[Assignee]:
     return [
-        Assignee(id=1, name='Павел', taskcount=1),
-        Assignee(id=2, name='Макар', taskcount=1)
+        Assignee(id=1, name='Иван', taskcount=1),
+        Assignee(id=2, name='Александр', taskcount=1)
     ]
 
 
 def test_get_assignees(test_assignees: list[Assignee], assignee_repo: AssigneeRepo) -> None:
     assert assignee_repo.get_assignees() == [
-        Assignee(id=1, name='Павел', taskcount=1),
-        Assignee(id=2, name='Макар', taskcount=1)
+        Assignee(id=1, name='Иван', taskcount=1),
+        Assignee(id=2, name='Александр', taskcount=1)
     ]
 
 
 def test_create_assignee(assignee_repo: AssigneeRepo) -> None:
-    new_assignee_name = 'Новыйисполнитель'
+    new_assignee_name = 'Новый исполнитель'
     new_assignee = assignee_repo.create_assignee(new_assignee_name)
 
     assert new_assignee in assignee_repo.get_assignees()
