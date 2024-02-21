@@ -2,7 +2,7 @@ import pytest
 from uuid import  UUID
 from datetime import datetime
 from app.models.task import Task, TaskStatuses
-from app.repositories.db_task_repo import TaskRepo
+from app.repositories.task_repo import TaskRepo
 
 @pytest.fixture()
 def task_repo() -> TaskRepo:
