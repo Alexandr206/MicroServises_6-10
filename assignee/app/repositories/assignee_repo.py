@@ -3,7 +3,8 @@ from uuid import UUID
 from app.models.assignee import Assignee
 
 assignees: list[Assignee] = [
-        Assignee(id=1, name='Александр', taskcount = 3)
+    Assignee(id=1, name='Иван', taskcount=1),
+    Assignee(id=2, name='Александр', taskcount=2),
 ]
 
 class AssigneeRepo:

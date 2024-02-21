@@ -23,13 +23,14 @@ def assignee_service_with_repo(assignee_repo_with_data):
 
 def test_get_assignees(assignee_service_with_repo):
     assignees = assignee_service_with_repo.get_assignees()
+    print(assignees)
     assert len(assignees) == 2
     assert assignees[0].name == 'Иван'
     assert assignees[1].name == 'Александр'
 
 
 def test_get_assignee_by_id(assignee_service_with_repo):
-    assignee = assignee_service_with_repo.get_assignee_by_id(1)
+    assignee = assignee_service_with_repo.get_assignee_by_id(0)
     assert assignee.name == 'Иван'
 
 
